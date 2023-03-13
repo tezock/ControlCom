@@ -1,0 +1,122 @@
+﻿<Window x:Class="ModernDesign.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModernDesign"
+        xmlns:viewModel="clr-namespace:ModernDesign.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Height="600" Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#272537"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="ControlCom"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="22"
+                       Margin="20,30,0,0"
+                       FontFamily="/Fonts/#Poppins"/>
+
+
+            <StackPanel Grid.Row="1">
+
+                <RadioButton Content="Voice Controller"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+
+                <RadioButton Content="Commands"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding DiscoveryViewCommand}"/>
+                <!--
+                <RadioButton Content="Contact"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ContactViewCommand}"/>
+                -->
+            </StackPanel>
+
+            <!--<TextBox Width="250"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Grid.Column="1"
+                     Style="{StaticResource ModernTextbox}"/>
+            -->
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+
+            <Rectangle Height="38" HorizontalAlignment="Left" Name="rectangle1" Stroke="Black" VerticalAlignment="Top" Width="920" RadiusX="9" RadiusY="9" MouseDown="rectangle1_MouseDown" Grid.ColumnSpan="2">
+
+                <Rectangle.OpacityMask>
+
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+
+                        <GradientStop Color="White" Offset="0" />
+
+                        <GradientStop Color="White" Offset="1" />
+
+                    </LinearGradientBrush>
+
+                </Rectangle.OpacityMask>
+
+                <Rectangle.Fill>
+
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+
+                        <GradientStop Color="White" Offset="0" />
+
+                        <GradientStop Color="White" Offset="0.008" />
+
+                    </LinearGradientBrush>
+
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Button Height="35" Margin="659,0,23,62" Name="button1" Width="38" Click="button1_Click" Grid.Column="1" Background="White" BorderThickness="0" >
+                <Image Source="Images\close-icon-modified.png" Height="28" Width="19"></Image>
+            </Button>
+
+            <Button Height="35" Margin="602,0,80,62" Name="button3"  Width="38" Click="button3_Click" Grid.Column="1" Background="White" BorderThickness="0" >
+                <Image Source="Images\minimize-icon.png" Width="28" Height="28"></Image>
+            </Button>
+
+
+
+        </Grid>
+    </Border>
+
+
+</Window>
