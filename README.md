@@ -1,5 +1,4 @@
 # Control Com by Robert Tezock
-**No dependencies needed for installation.**
 
 Welcome to ControlCom, a .NET based app designed for vocally controlled use of desktops and laptops.  
 
