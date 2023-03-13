@@ -312,6 +312,7 @@ namespace ModernDesign.MVVM.View
 
         private void StartDictation(object sender, RoutedEventArgs e)
         {
+            CommandLog.Text = "";
             CommandLog.Text += System.Environment.NewLine + DateTime.Now + ": New to ControlComs? Commands visible on 'Commands' page.";
             CommandLog.Text += System.Environment.NewLine + DateTime.Now + ": Please allow up to 10s for Dictation Technologies to load.";
             recEngine.RecognizeAsync(RecognizeMode.Multiple);
