@@ -60,7 +60,9 @@ namespace ModernDesign
 
         {
 
-            this.Close();
+            //this.Close();
+            //This is the correct Shutdown method.
+            App.Current.Shutdown(); 
 
         }
 

@@ -32,10 +32,14 @@ namespace ModernDesign.MVVM.View
         InputSimulator isim = new InputSimulator(); // Creates InputSimulator Object
         String last = "";
         
+        // Scale Views
         MouseRight mouseRight = new MouseRight();
         MouseLeft mouseLeft = new MouseLeft();
         MouseUp mouseUp = new MouseUp();
         MouseDown mouseDown = new MouseDown();
+
+        //Get Height and Width of Rectangle
+        Screen monitor = Screen.FromPoint(System.Windows.Forms.Cursor.Position);
 
         public HomeView()
         {
@@ -54,6 +58,7 @@ namespace ModernDesign.MVVM.View
             recEngine.SetInputToDefaultAudioDevice();
             recEngine.SpeechRecognized += recEngine_SpeechRecognized;
             InitializeComponent();
+
         }
 
         void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
@@ -61,11 +66,9 @@ namespace ModernDesign.MVVM.View
             DateTime now = DateTime.Now;
             int mouse_x = System.Windows.Forms.Cursor.Position.X;
             int mouse_y = System.Windows.Forms.Cursor.Position.Y;
-            int heightCoefficient = SystemInformation.VirtualScreen.Height / 1080;
-            int widthCoefficient = SystemInformation.VirtualScreen.Width / 1920;
-            System.Windows.Point mouse = new System.Windows.Point();
-            mouse.X = mouse_x;
-            mouse.Y = mouse_y;
+            double heightCoefficient = (double) monitor.Bounds.Height / (double) 1080;
+            double widthCoefficient = (double) monitor.Bounds.Width / (double) 1920;
+            
 
 
 
@@ -114,10 +117,9 @@ namespace ModernDesign.MVVM.View
                 case "Mouse Up":
                   
                     last = "Up";
-                    CommandLog.Text += System.Environment.NewLine + now + ": Mouse Moved Up" + SystemInformation.VirtualScreen.Height;
+                    CommandLog.Text += System.Environment.NewLine + now + ": Mouse Moved Up";
                     mouseUp.Top = mouse_y - 700;
-                    mouseUp.Left = mouse_x - 700;
-                    Console.WriteLine(heightCoefficient + " " + widthCoefficient);
+                    mouseUp.Left = mouse_x - (700 * widthCoefficient);
                     mouseUp.Show();
                     break;
 
@@ -126,7 +128,7 @@ namespace ModernDesign.MVVM.View
                     last = "Down";
                     CommandLog.Text += System.Environment.NewLine + now + ": Mouse Moved Down";
                     mouseDown.Top =  mouse_y;
-                    mouseDown.Left = mouse_x - 700 * widthCoefficient;
+                    mouseDown.Left = mouse_x - (700 * heightCoefficient);
                     mouseDown.Show();
                     break;
 
@@ -134,8 +136,8 @@ namespace ModernDesign.MVVM.View
                     
                     last = "Left";
                     CommandLog.Text += System.Environment.NewLine + now + ": Mouse Moved Left";
-                    mouseLeft.Top = mouse_y - 350 * heightCoefficient;
-                    mouseLeft.Left = mouse_x - 1000 * widthCoefficient;
+                    mouseLeft.Top = mouse_y - (350 * heightCoefficient);
+                    mouseLeft.Left = mouse_x - 1000;
                     mouseLeft.Show();
                     break;
 
@@ -143,7 +145,7 @@ namespace ModernDesign.MVVM.View
            
                     last = "Right";
                     CommandLog.Text += System.Environment.NewLine + now + ": Mouse Moved Right";
-                    mouseRight.Top = mouse_y - 350 * heightCoefficient;
+                    mouseRight.Top = mouse_y - (350 * heightCoefficient);
                     mouseRight.Left = mouse_x;
                     mouseRight.Show();
                     break;
