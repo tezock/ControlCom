@@ -61,6 +61,13 @@ namespace ModernDesign.MVVM.View
             DateTime now = DateTime.Now;
             int mouse_x = System.Windows.Forms.Cursor.Position.X;
             int mouse_y = System.Windows.Forms.Cursor.Position.Y;
+            int heightCoefficient = SystemInformation.VirtualScreen.Height / 1080;
+            int widthCoefficient = SystemInformation.VirtualScreen.Width / 1920;
+            System.Windows.Point mouse = new System.Windows.Point();
+            mouse.X = mouse_x;
+            mouse.Y = mouse_y;
+
+
 
 
             switch (e.Result.Text)
@@ -107,9 +114,10 @@ namespace ModernDesign.MVVM.View
                 case "Mouse Up":
                   
                     last = "Up";
-                    CommandLog.Text += System.Environment.NewLine + now + ": Mouse Moved Up";
+                    CommandLog.Text += System.Environment.NewLine + now + ": Mouse Moved Up" + SystemInformation.VirtualScreen.Height;
                     mouseUp.Top = mouse_y - 700;
                     mouseUp.Left = mouse_x - 700;
+                    Console.WriteLine(heightCoefficient + " " + widthCoefficient);
                     mouseUp.Show();
                     break;
 
@@ -117,8 +125,8 @@ namespace ModernDesign.MVVM.View
                 
                     last = "Down";
                     CommandLog.Text += System.Environment.NewLine + now + ": Mouse Moved Down";
-                    mouseDown.Top = mouse_y;
-                    mouseDown.Left = mouse_x - 700;
+                    mouseDown.Top =  mouse_y;
+                    mouseDown.Left = mouse_x - 700 * widthCoefficient;
                     mouseDown.Show();
                     break;
 
@@ -126,8 +134,8 @@ namespace ModernDesign.MVVM.View
                     
                     last = "Left";
                     CommandLog.Text += System.Environment.NewLine + now + ": Mouse Moved Left";
-                    mouseLeft.Top = mouse_y - 350;
-                    mouseLeft.Left = mouse_x - 1000;
+                    mouseLeft.Top = mouse_y - 350 * heightCoefficient;
+                    mouseLeft.Left = mouse_x - 1000 * widthCoefficient;
                     mouseLeft.Show();
                     break;
 
@@ -135,7 +143,7 @@ namespace ModernDesign.MVVM.View
            
                     last = "Right";
                     CommandLog.Text += System.Environment.NewLine + now + ": Mouse Moved Right";
-                    mouseRight.Top = mouse_y - 350;
+                    mouseRight.Top = mouse_y - 350 * heightCoefficient;
                     mouseRight.Left = mouse_x;
                     mouseRight.Show();
                     break;
@@ -153,7 +161,10 @@ namespace ModernDesign.MVVM.View
                     recEngine.RecognizeAsyncStop();
                     btnDisable.IsEnabled = false;
                     btnEnable.IsEnabled = true;
-
+                    mouseRight.Hide();
+                    mouseLeft.Hide();
+                    mouseUp.Hide();
+                    mouseDown.Hide();
                     break;
 
                 case "10":
