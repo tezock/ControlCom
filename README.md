@@ -36,11 +36,11 @@ Additionally, after the creation of this project, I realised the potential appli
 
 ## Setup:
 - Ensure you have the latest version of Visual Studio
-- run ```git clone https://github.com/tezock/ControlCom.git``` to clone the repository
+- Run ```git clone https://github.com/tezock/ControlCom.git``` to clone the repository
 
 ## Usage
 - To use the app, ```click on ControlCom.sln```
-- Click ```Run```
+- Click ```Run``` from your code editor
   
 ### Credits
 
