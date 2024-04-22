@@ -19,6 +19,13 @@ This led to me deciding to ultimately use my voice as the mechanism for controll
 
 Additionally, after the creation of this project, I realised the potential applications of such a program, such as those who wish to use technology, but are limited by physical ability. It's been inspiring to me, to in my own way, potentially contribute to their usage of modern technology.
 
+
+### Built With
+
+* [![WPF][https://learn.microsoft.com/en-us/dotnet/desktop/wpf/app-development/wpf-xaml-browser-applications-overview?view=netframeworkdesktop-4.8]][wpf-url]
+* [![XAML][https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-8.0]][XAML-url]
+* [![C#][https://learn.microsoft.com/en-us/dotnet/csharp/]][csharp-url]
+* 
 ## At a Glance
 
 ### Home Page
