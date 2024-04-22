@@ -1,4 +1,4 @@
-# Control Com by Robert Tezock
+# ControlCom by Robert Tezock
 
 <p align="center">
 	<img src="./ModernDesign/Images/ControlCom-Logo.png" width="400" height="400" align="center" />
@@ -12,6 +12,7 @@
 
 ## Introduction and Motivation
 ControlCom was a project initially created to satisfy my own laziness. While watching content online, I hated having to get up myself to switch to the next video/episode.
+
 Thus, the question was raised: Is there another way I can control my computer?
 
 This led to me deciding to ultimately use my voice as the mechanism for controlling my computer, and through the struggles of countless of hours and learning a new language in C# and XAML, ControlCom was born!
@@ -32,7 +33,7 @@ Additionally, after the creation of this project, I realised the potential appli
 
 ## Usage
 - To use the app, ```click on ControlCom.sln```
-- Click Run
+- Click ```Run```
   
 ### Credits
 
