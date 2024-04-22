@@ -36,5 +36,5 @@ Additionally, after the creation of this project, I realised the potential appli
   
 ### Credits
 
-Design Inspiration from ![Payload](https://www.youtube.com/@_buffer)
+Design Inspiration from [Payload](https://www.youtube.com/@_buffer)
 
