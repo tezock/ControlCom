@@ -1,6 +1,6 @@
 # Control Com by Robert Tezock
 
-<img src="./ModernDesign/Images/ControlCom-Logo.png" width="400" height="400" style="margin: auto" />
+<img src="./ModernDesign/Images/ControlCom-Logo.png" width="400" height="400" style="display: block; margin-left: auto; margin-right: auto;" />
 <p>ControlCom is a .NET based app designed for vocally controlled use of desktops and laptops.</p>
 
 ## Home View
