@@ -2,7 +2,7 @@
 
 Welcome to ControlCom!
 <img src="./ModernDesign/Images/ControlCom-Logo.png" width="400" height="400" margin="auto" />
-ControlCom is a .NET based app designed for vocally controlled use of desktops and laptops.
+<p>ControlCom is a .NET based app designed for vocally controlled use of desktops and laptops.</p>
 
 ## Home View
 ![Home Page](https://user-images.githubusercontent.com/105029396/224744458-8ad9695b-c866-4b0c-9557-fe6671b558a4.png)  
