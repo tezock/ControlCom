@@ -25,7 +25,7 @@ Additionally, after the creation of this project, I realised the potential appli
 * [![WPF][https://learn.microsoft.com/en-us/dotnet/desktop/wpf/app-development/wpf-xaml-browser-applications-overview?view=netframeworkdesktop-4.8]][wpf-url]
 * [![XAML][https://learn.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-8.0]][XAML-url]
 * [![C#][https://learn.microsoft.com/en-us/dotnet/csharp/]][csharp-url]
-* 
+
 ## At a Glance
 
 ### Home Page
